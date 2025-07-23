@@ -3,73 +3,15 @@
     <head>
         <title>Train Tracks</title>
         <link rel="stylesheet" href="tracks.css">
+        <script src="tracks.js" defer></script>
+        <script>
+        var tracks;
+       function init(){
+           tracks = new Tracks();
+       } 
+        </script>
     </head>
-    <body>
-        <div id="grid" class="grid">
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div> 
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-            <div id="cell" class="cell"></div>
-        </div>
+    <body onload="init()">
+        <div id="grid" class="grid"></div>
     </body>
 </html>

@@ -2,7 +2,6 @@
     width: 80em;
     height: 80em;
     border: 1px solid black;
-    
     display: grid;
     grid-template-columns: repeat(8, 10em);  
     grid-template-rows: repeat(8, 10em);     
@@ -13,4 +12,5 @@
     height: 10em;
     border: 1px solid black;
     box-sizing: border-box;  
+    background-color: white;
 }
