@@ -1,6 +1,6 @@
 # Train Tracks Puzzle
 
-Based on the Times Train Tracks game.
+Based on the Times Train Tracks game, used as an excuse to learn HTML, JS and CSS framework.
 
 ## Overview
 
