@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    gap: 2em;
+    gap: 5em;
 }
 
 .grid {
