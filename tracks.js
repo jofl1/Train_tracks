@@ -1,3 +1,5 @@
+'use strict'
+
 class Tracks{
     constructor() {
         const t = this;
@@ -18,7 +20,7 @@ class Tracks{
     }
     
     initializeTrackOptions(t) { 
-        t.trackoptions.forEach((option, index) => { // Loops through each option to show backrgrounf image
+        t.trackoptions.forEach((option, index) => { // Loops through each option to show backrground image
             const element = document.getElementById(option.id);
             element.style.backgroundImage = `url('${option.image}')`; // sets background image of element to track image ($ is f string equivalent)
             
@@ -92,3 +94,19 @@ class Tracks{
     }
     
 }
+
+TracksGame
+    
+
+    Grid
+        .checkRow(3)
+        .checkColumn(2)
+        loop { drawing Cell
+            
+    Cell
+        .el
+        
+    
+    Track
+        .draw(el)
+    
