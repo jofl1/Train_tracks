@@ -72,6 +72,3 @@
     justify-content: center;
 }
 
-.row-count[data-value="0"], .col-count[data-value="0"] {
-    color: #ccc;
-}

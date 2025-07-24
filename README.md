@@ -22,6 +22,12 @@ The JavaScript is organised into four main classes that work together to create 
 
 2.  **`Cell`**: Represents a single square on the game grid. Each cell object tracks its position (row and column), whether it currently holds a track (`currentTrack`), and if it's a fixed, unchangeable part of the puzzle (`isFixed`). It is also responsible for its own HTML `<div>` element.
 
+    A key aspect of the `Cell` is how it determines its own coordinates. When the `Grid` is built, it creates 64 `Cell` objects, giving each a unique index from 0 to 63. The `Cell`'s constructor then uses this index to calculate its row and column mathematically:
+    *   **Row Calculation**: `Math.floor(index / 8)`
+    *   **Column Calculation**: `index % 8`
+
+    This approach means that every cell instantly knows its position without needing to query the DOM or rely on complex data structures. This `Cell` object, complete with its coordinates, is then passed directly to click handlers, making event logic clean and efficient.
+
 3.  **`Grid`**: Manages the entire 8x8 grid. It creates and holds all the `Cell` objects and, critically, enforces the game's primary rule by tracking the number of tracks placed in each row and column (`rowCounts` and `columnCounts`).
 
 4.  **`TracksGame`**: The main controller that orchestrates the entire game. When a new game is initiated (via `new TracksGame()`), its `constructor` method executes a sequence of setup operations:

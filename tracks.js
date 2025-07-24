@@ -26,7 +26,7 @@ class Cell {
     constructor(index, gridSize = 8) {
         this.index = index;
         this.row = Math.floor(index / gridSize);
-        this.column = index % gridSize;
+        this.column = index % gridSize; //remainder
         this.currentTrack = null; // This will hold the track piece placed in this cell
         this.isFixed = false; // Fixed cells can't be changed
         this.element = this.createElement(); // The actual HTML element for this cell
