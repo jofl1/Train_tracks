@@ -1,6 +1,12 @@
 .container {
     display: flex;
-    gap: 5em;
+    gap: 5vh;
+    height: 90vh;
+    padding: 5vh;
+}
+
+.grid-wrapper {
+    position: relative;
 }
 
 .grid {
@@ -26,16 +32,46 @@
 .track-selector {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 1vh;
+    height: 80vh;
+    justify-content: space-between;
 }
 
 .track-option {
-    width: 10em;
-    height: 10em;
+    width: 12vh;
+    height: 12vh;
     border: 1px solid black;
     box-sizing: border-box;
     cursor: pointer;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.track-option.selected {
+    outline: 3px solid blue;
+}
+
+.row-count {
+    position: absolute;
+    right: -3vh;
+    font-size: 100%;
+    font-weight: bold;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.col-count {
+    position: absolute;
+    bottom: 5vh;
+    font-size: 100%;
+    font-weight: bold;
+    width: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+.row-count[data-value="0"], .col-count[data-value="0"] {
+    color: #ccc;
 }
