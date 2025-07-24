@@ -1,6 +1,6 @@
 # Train Tracks Puzzle
 
-A simple yet engaging web-based puzzle game where the objective is to complete a track layout based on set constraints.
+Based on the Times Train Tracks game.
 
 ## Overview
 
