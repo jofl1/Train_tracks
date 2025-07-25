@@ -63,6 +63,12 @@ class Cell {
         this.currentTrack = track;
         track.apply(this.element);
     }
+    
+    onclick(callback) {
+        const cell = this
+        cell.element.addEventListener('click', () => { callback(cell, tg); });
+        
+    }
 }
 
 // Manages the game grid and the rules for placing tracks
@@ -121,7 +127,8 @@ class Grid {
 // main controller for the game
 class TracksGame {
     constructor() {
-        this.trackPieces = [
+        const tg = this;
+        tg.trackPieces = [
             new Track('straight', 'track_images/tracks_straight.jpg'),
             new Track('horiz', 'track_images/tracks_horiz.jpg'),
             new Track('trc', 'track_images/tracks_trc.jpg'),
@@ -130,17 +137,18 @@ class TracksGame {
             new Track('blc', 'track_images/tracks_blc.jpg')
         ];
         
-        this.selectedTrack = this.trackPieces[0]; // The track piece currently selected
-        this.grid = new Grid(); // The game grid
-        this.initialiseTrackSelector();
+        tg.selectedTrack = tg.trackPieces[0]; // The track piece currently selected
+        tg.grid = new Grid(); // The game grid
+        tg.initialiseTrackSelector();
         
         // Listen for clicks on each cell in the grid
-        this.grid.cells.forEach(cell => {
-            cell.element.onclick = () => this.handleCellClick(cell);
+        tg.grid.cells.forEach(cell => {
+            //cell.element.onclick = () => tg.handleCellClick(cell);
+            cell.onclick((tg) => { tg.handleCellClick(cell, tg) });
         });
         
-        this.placeFixedTracks(); // Place the initial, unchangeable tracks
-        this.grid.createCounterDisplays();
+        tg.placeFixedTracks(); // Place the initial, unchangeable tracks
+        tg.grid.createCounterDisplays();
     }
     
     // Sets up the track selector so can choose which piece to place
@@ -169,7 +177,7 @@ class TracksGame {
     }
     
     // This function is called whenever a cell on the grid is clicked
-    handleCellClick(cell) {
+    handleCellClick(cell, tg) {
         if (cell.isFixed) return; // Do nothing if the cell is fixed
         
         // either remove a track or place one if the row/column limits haven't been reached
