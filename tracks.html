@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en">
     <head>
-        <title>Train Tracks</title>
+        <title>Train Tracks - The Classic Puzzle</title>
         <link rel="stylesheet" href="tracks.css">
         <script src="tracks.js" defer></script>
         <script>
@@ -11,18 +11,104 @@
         </script>
     </head>
     <body onload="init()">
-        <div class="container">
-            <div class="grid-wrapper">
-                <div id="grid" class="grid"></div>
-            </div>
-            <div class="track-selector">
-                <div id="straight" class="track-option"></div>
-                <div id="horiz" class="track-option"></div>
-                <div id="tlc" class="track-option"></div>
-                <div id="trc" class="track-option"></div>
-                <div id="blc" class="track-option"></div>
-                <div id="brc" class="track-option"></div>
-            </div>
+        <div class="page-container">
+            <header class="game-header">
+                <h1>Train Tracks</h1>
+                <p class="tagline">Connect the stations with a continuous railway</p>
+            </header>
+            
+            <main class="game-container">
+                <div class="game-panel left-panel">
+                    <div class="info-card">
+                        <h3>How to Play</h3>
+                        <div class="controls-list">
+                            <div class="control-item">
+                                <span class="control-key">Left Click</span>
+                                <span class="control-desc">Rotate track</span>
+                            </div>
+                            <div class="control-item">
+                                <span class="control-key">Right Click</span>
+                                <span class="control-desc">Change track type</span>
+                            </div>
+                            <div class="control-item">
+                                <span class="control-key">R</span>
+                                <span class="control-desc">Rotate selected</span>
+                            </div>
+                            <div class="control-item">
+                                <span class="control-key">Space</span>
+                                <span class="control-desc">Cycle track</span>
+                            </div>
+                            <div class="control-item">
+                                <span class="control-key">Delete</span>
+                                <span class="control-desc">Clear cell</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <div id="move-counter" class="move-display">Moves: 0</div>
+                        <div id="timer-display" class="timer-display">Time: 0:00</div>
+                        <div class="button-group">
+                            <button id="reset-button" class="reset-button">
+                                <span class="button-icon">↻</span>
+                                Reset
+                            </button>
+                            <button id="hint-button" class="hint-button" onclick="game.getHint()">
+                                <span class="button-icon">💡</span>
+                                Hint
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="difficulty-card">
+                        <h3>Difficulty</h3>
+                        <div class="difficulty-buttons">
+                            <button class="difficulty-btn active" data-difficulty="easy" onclick="game.changeDifficulty('easy')">Easy</button>
+                            <button class="difficulty-btn" data-difficulty="medium" onclick="game.changeDifficulty('medium')">Medium</button>
+                            <button class="difficulty-btn" data-difficulty="hard" onclick="game.changeDifficulty('hard')">Hard</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-board">
+                    <div class="grid-wrapper">
+                        <div id="grid" class="grid"></div>
+                    </div>
+                </div>
+                
+                <div class="game-panel right-panel">
+                    <div class="info-card">
+                        <h3>Rules</h3>
+                        <ul class="rules-list">
+                            <li>Connect the two stations (S) with tracks</li>
+                            <li>Each row must have exactly 3 track pieces</li>
+                            <li>Each column must have exactly 3 track pieces</li>
+                            <li>All tracks must form one continuous path</li>
+                            <li>No loose ends or branches allowed</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="legend-card">
+                        <h3>Track Status</h3>
+                        <div class="legend-item">
+                            <span class="legend-box connected"></span>
+                            <span>Connected</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-box disconnected"></span>
+                            <span>Disconnected</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-box complete"></span>
+                            <span>Complete Path</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            <footer class="game-footer">
+                <p>A classic logic puzzle game</p>
+            </footer>
         </div>
     </body>
 </html>
